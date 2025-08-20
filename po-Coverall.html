@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Ads Success Story: Coverall PCS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Futura:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=HarmonyOS+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'HarmonyOS Sans SC', sans-serif;
+            color: #333;
+            background-color: #f5f7fa;
+        }
+        .poster {
+            width: 720px;
+            min-height: 1334px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #f0f4f8, #e6eef8);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .bg-shape {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: 0;
+        }
+        .shape-1 {
+            width: 400px;
+            height: 400px;
+            background-color: rgba(0, 96, 168, 0.15);
+            top: -100px;
+            right: -100px;
+        }
+        .shape-2 {
+            width: 300px;
+            height: 300px;
+            background-color: rgba(79, 195, 247, 0.15);
+            bottom: 30%;
+            left: -100px;
+        }
+        .shape-3 {
+            width: 250px;
+            height: 250px;
+            background-color: rgba(0, 32, 96, 0.15);
+            bottom: 10%;
+            right: -50px;
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+            padding: 40px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-top: 20px;
+        }
+        .title {
+            font-family: 'Futura', sans-serif;
+            font-size: 40px;
+            font-weight: 700;
+            color: #002060;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+        .subtitle {
+            font-size: 22px;
+            color: #4a6fa5;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        .section {
+            background-color: white;
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+        .section-title {
+            display: flex;
+            align-items: center;
+            font-family: 'Futura', sans-serif;
+            font-size: 26px;
+            font-weight: 600;
+            color: #002060;
+            margin-bottom: 20px;
+        }
+        .section-title .material-icons {
+            margin-right: 12px;
+            color: #4fc3f7;
+            font-size: 30px;
+        }
+        .business-overview {
+            display: flex;
+            gap: 20px;
+        }
+        .business-info {
+            flex: 1;
+        }
+        .business-image {
+            flex: 1;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 180px;
+        }
+        .business-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .metrics {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+        .metric {
+            text-align: center;
+            flex: 1;
+        }
+        .metric-value {
+            font-family: 'Futura', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #4fc3f7;
+            margin-bottom: 5px;
+        }
+        .metric-label {
+            font-size: 14px;
+            color: #666;
+        }
+        .objectives {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .objective {
+            flex: 1 0 calc(50% - 10px);
+            background-color: #f0f7ff;
+            border-radius: 12px;
+            padding: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+        .objective .material-icons {
+            color: #4fc3f7;
+            margin-right: 10px;
+            font-size: 24px;
+        }
+        .objective-content {
+            flex: 1;
+        }
+        .objective-title {
+            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: #002060;
+        }
+        .objective-desc {
+            font-size: 14px;
+            color: #666;
+        }
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .strategy-item {
+            background-color: #f0f7ff;
+            border-radius: 12px;
+            padding: 15px;
+        }
+        .strategy-title {
+            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #002060;
+            display: flex;
+            align-items: center;
+        }
+        .strategy-title .material-icons {
+            color: #4fc3f7;
+            margin-right: 8px;
+            font-size: 20px;
+        }
+        .strategy-points {
+            font-size: 14px;
+            color: #555;
+        }
+        .strategy-points li {
+            margin-bottom: 5px;
+            list-style-type: none;
+            position: relative;
+            padding-left: 15px;
+        }
+        .strategy-points li:before {
+            content: "•";
+            color: #4fc3f7;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        .results {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .metrics-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+        }
+        .metric-card {
+            flex: 1;
+            background: linear-gradient(135deg, #002060, #0039a6);
+            color: white;
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,32,96,0.2);
+        }
+        .metric-card-value {
+            font-family: 'Futura', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: #4fc3f7;
+            margin-bottom: 5px;
+        }
+        .metric-card-label {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .achievements {
+            background-color: #f0f7ff;
+            border-radius: 12px;
+            padding: 15px;
+        }
+        .achievements-title {
+            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #002060;
+        }
+        .achievements-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        .achievement-item {
+            display: flex;
+            align-items: flex-start;
+            font-size: 14px;
+        }
+        .achievement-item .material-icons {
+            color: #4fc3f7;
+            margin-right: 8px;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+        .tools-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .tool-item {
+            background-color: #f0f7ff;
+            border-radius: 12px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .tool-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #002060;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+        .tool-icon .material-icons {
+            font-size: 20px;
+            color: #4fc3f7;
+        }
+        .tool-name {
+            font-weight: 600;
+            font-size: 16px;
+            color: #002060;
+        }
+        .conclusion {
+            text-align: center;
+            background: linear-gradient(135deg, #002060, #0039a6);
+            color: white;
+            border-radius: 16px;
+            padding: 30px;
+        }
+        .conclusion-title {
+            font-family: 'Futura', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: white;
+        }
+        .conclusion-text {
+            font-size: 16px;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #4fc3f7;
+            color: #002060;
+            font-weight: 600;
+            font-size: 18px;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+        .highlight {
+            background: linear-gradient(transparent 60%, rgba(79, 195, 247, 0.3) 40%);
+            padding: 0 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="poster">
+        <div class="bg-shape shape-1"></div>
+        <div class="bg-shape shape-2"></div>
+        <div class="bg-shape shape-3"></div>
+        
+        <div class="content">
+            <div class="header">
+                <h1 class="title">Google Ads Success Story</h1>
+                <h2 class="subtitle">Coverall PCS: Driving Qualified Leads for Commercial Cleaning Services</h2>
+            </div>
+            
+            <div class="section">
+                <h3 class="section-title">
+                    <i class="material-icons">business</i>
+                    Business Overview
+                </h3>
+                <div class="business-overview">
+                    <div class="business-info">
+                        <p>Professional cleaning and janitorial service provider serving commercial and residential clients in Dallas-Fort Worth. Science-based cleaning approach with customized plans.</p>
+                        <div class="metrics">
+                            <div class="metric">
+                                <div class="metric-value">35+</div>
+                                <div class="metric-label">Years in Business</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">100%</div>
+                                <div class="metric-label">Satisfaction</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">98.7%</div>
+                                <div class="metric-label">Retention</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">$5M</div>
+                                <div class="metric-label">Insurance</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="business-image">
+                        <img src="https://sfile.chatglm.cn/images-ppt/9570305d239b.jpg" alt="Commercial cleaning service">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h3 class="section-title">
+                    <i class="material-icons">track_changes</i>
+                    Campaign Objectives
+                </h3>
+                <div class="objectives">
+                    <div class="objective">
+                        <i class="material-icons">visibility</i>
+                        <div class="objective-content">
+                            <div class="objective-title">Increase Brand Awareness</div>
+                            <div class="objective-desc">Boost local visibility in Dallas-Fort Worth area</div>
+                        </div>
+                    </div>
+                    <div class="objective">
+                        <i class="material-icons">person_search</i>
+                        <div class="objective-content">
+                            <div class="objective-title">Generate Qualified Leads</div>
+                            <div class="objective-desc">Target businesses seeking cleaning services</div>
+                        </div>
+                    </div>
+                    <div class="objective">
+                        <i class="material-icons">phone_in_talk</i>
+                        <div class="objective-content">
+                            <div class="objective-title">Maximize Conversions</div>
+                            <div class="objective-desc">Phone calls & form fills within $50/day budget</div>
+                        </div>
+                    </div>
+                    <div class="objective">
+                        <i class="material-icons">groups</i>
+                        <div class="objective-content">
+                            <div class="objective-title">Target Audience</div>
+                            <div class="objective-desc">Property managers, offices, medical facilities</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h3 class="section-title">
+                    <i class="material-icons">strategy</i>
+                    Strategy & Execution
+                </h3>
+                <div class="strategy-grid">
+                    <div class="strategy-item">
+                        <div class="strategy-title">
+                            <i class="material-icons">location_on</i>
+                            Targeting & Audience
+                        </div>
+                        <ul class="strategy-points">
+                            <li>Geo-targeted Dallas-Fort Worth area</li>
+                            <li>Focused on commercial clients</li>
+                            <li>Negative keywords for irrelevant searches</li>
+                        </ul>
+                    </div>
+                    <div class="strategy-item">
+                        <div class="strategy-title">
+                            <i class="material-icons">settings</i>
+                            Campaign Setup
+                        </div>
+                        <ul class="strategy-points">
+                            <li>Search Network Ads (high-intent users)</li>
+                            <li>$50/day budget (~$1,500/month)</li>
+                            <li>Ad groups segmented by services</li>
+                        </ul>
+                    </div>
+                    <div class="strategy-item">
+                        <div class="strategy-title">
+                            <i class="material-icons">campaign</i>
+                            Ad Copy & Extensions
+                        </div>
+                        <ul class="strategy-points">
+                            <li>Compelling CTAs & messaging</li>
+                            <li>Call, location & site link extensions</li>
+                            <li>Service-specific ad groups</li>
+                        </ul>
+                    </div>
+                    <div class="strategy-item">
+                        <div class="strategy-title">
+                            <i class="material-icons">landing_page</i>
+                            Landing Page Alignment
+                        </div>
+                        <ul class="strategy-points">
+                            <li>Service-specific landing page</li>
+                            <li>Trust signals & credibility</li>
+                            <li>Contact forms & local relevance</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h3 class="section-title">
+                    <i class="material-icons">insights</i>
+                    Results & Achievements
+                </h3>
+                <div class="results">
+                    <div class="metrics-row">
+                        <div class="metric-card">
+                            <div class="metric-card-value">5.2%</div>
+                            <div class="metric-card-label">CTR</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-card-value">$3.20</div>
+                            <div class="metric-card-label">Avg. CPC</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-card-value">45+</div>
+                            <div class="metric-card-label">Monthly Leads</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-card-value">$33</div>
+                            <div class="metric-card-label">Cost Per Conversion</div>
+                        </div>
+                    </div>
+                    <div class="achievements">
+                        <div class="achievements-title">Key Achievements</div>
+                        <div class="achievements-list">
+                            <div class="achievement-item">
+                                <i class="material-icons">trending_up</i>
+                                <span>Improved lead generation efficiency</span>
+                            </div>
+                            <div class="achievement-item">
+                                <i class="material-icons">visibility</i>
+                                <span>Increased local market visibility</span>
+                            </div>
+                            <div class="achievement-item">
+                                <i class="material-icons">tune</i>
+                                <span>Reduced wasted ad spend</span>
+                            </div>
+                            <div class="achievement-item">
+                                <i class="material-icons">attach_money</i>
+                                <span>Strengthened ROI with quality leads</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h3 class="section-title">
+                    <i class="material-icons">build</i>
+                    Tools & Skills
+                </h3>
+                <div class="tools-grid">
+                    <div class="tool-item">
+                        <div class="tool-icon">
+                            <i class="material-icons">ads_click</i>
+                        </div>
+                        <div class="tool-name">Google Ads Manager</div>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-icon">
+                            <i class="material-icons">assessment</i>
+                        </div>
+                        <div class="tool-name">Google Analytics</div>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-icon">
+                            <i class="material-icons">search</i>
+                        </div>
+                        <div class="tool-name">Keyword Research</div>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-icon">
+                            <i class="material-icons">web</i>
+                        </div>
+                        <div class="tool-name">Landing Page Optimization</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section conclusion">
+                <h3 class="conclusion-title">Let's Grow Your Business Together</h3>
+                <p class="conclusion-text">
+                    Ready to achieve <span class="highlight">similar results</span> for your business? Contact me today to discuss how we can create a <span class="highlight">customized Google Ads strategy</span> that drives qualified leads and maximizes your ROI.
+                </p>
+                <a href="#" class="cta-button">Get In Touch</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
