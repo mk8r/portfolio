@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MD Sajjad Islam - Digital Marketing Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
+            background-color: #f5f7fa;
+        }
+        .portfolio {
+            width: 720px;
+            min-height: 1334px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #f0f4f8, #e6eef8);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .bg-shape {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: 0;
+        }
+        .shape-1 {
+            width: 400px;
+            height: 400px;
+            background-color: rgba(0, 96, 168, 0.15);
+            top: -100px;
+            right: -100px;
+        }
+        .shape-2 {
+            width: 300px;
+            height: 300px;
+            background-color: rgba(79, 195, 247, 0.15);
+            bottom: 30%;
+            left: -100px;
+        }
+        .shape-3 {
+            width: 250px;
+            height: 250px;
+            background-color: rgba(0, 32, 96, 0.15);
+            bottom: 10%;
+            right: -50px;
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+            padding: 40px;
+        }
+        .nav-bar {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        .home-btn {
+            background: linear-gradient(135deg, #002060, #0039a6);
+            color: white;
+            border-radius: 30px;
+            padding: 8px 20px;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0,32,96,0.2);
+            transition: all 0.3s ease;
+        }
+        .home-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,32,96,0.3);
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 30px;
+            border: 5px solid #f0f7ff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .profile-info {
+            flex: 1;
+        }
+        .name {
+            font-size: 32px;
+            font-weight: 700;
+            color: #002060;
+            margin-bottom: 5px;
+        }
+        .title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #4fc3f7;
+            margin-bottom: 15px;
+        }
+        .contact {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .tagline {
+            font-size: 16px;
+            font-weight: 500;
+            color: #333;
+            font-style: italic;
+        }
+        .section {
+            background-color: white;
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #002060;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .section-title i {
+            margin-right: 12px;
+            color: #4fc3f7;
+        }
+        .client-intro {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        .objectives {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .objective {
+            flex: 1 0 calc(50% - 10px);
+            background: linear-gradient(135deg, #f0f7ff, #e1f5fe);
+            border-radius: 12px;
+            padding: 15px;
+            display: flex;
+            align-items: flex-start;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        .objective:hover {
+            transform: translateY(-5px);
+        }
+        .objective i {
+            color: #4fc3f7;
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        .objective-content {
+            flex: 1;
+        }
+        .objective-title {
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 5px;
+            color: #002060;
+        }
+        .objective-desc {
+            font-size: 14px;
+            color: #666;
+        }
+        .dashboard-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-top: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .strategy-item {
+            background: linear-gradient(135deg, #f0f7ff, #e1f5fe);
+            border-radius: 12px;
+            padding: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        .strategy-item:hover {
+            transform: translateY(-5px);
+        }
+        .strategy-title {
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: #002060;
+            display: flex;
+            align-items: center;
+        }
+        .strategy-title i {
+            color: #4fc3f7;
+            margin-right: 8px;
+            font-size: 18px;
+        }
+        .strategy-points {
+            font-size: 14px;
+            color: #555;
+        }
+        .strategy-points li {
+            margin-bottom: 5px;
+            list-style-type: none;
+            position: relative;
+            padding-left: 15px;
+        }
+        .strategy-points li:before {
+            content: "•";
+            color: #4fc3f7;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        .metrics-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .metric-card {
+            flex: 1;
+            background: linear-gradient(135deg, #002060, #0039a6);
+            color: white;
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,32,96,0.2);
+            transition: transform 0.3s ease;
+        }
+        .metric-card:hover {
+            transform: translateY(-5px);
+        }
+        .metric-value {
+            font-size: 28px;
+            font-weight: 700;
+            color: #4fc3f7;
+            margin-bottom: 5px;
+        }
+        .metric-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .screenshots {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .screenshot {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .achievements {
+            background: linear-gradient(135deg, #f0f7ff, #e1f5fe);
+            border-radius: 12px;
+            padding: 15px;
+        }
+        .achievements-title {
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: #002060;
+        }
+        .achievements-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        .achievement-item {
+            display: flex;
+            align-items: flex-start;
+            font-size: 14px;
+        }
+        .achievement-item i {
+            color: #4fc3f7;
+            margin-right: 8px;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+        .tools-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .tool-item {
+            background: linear-gradient(135deg, #f0f7ff, #e1f5fe);
+            border-radius: 12px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        .tool-item:hover {
+            transform: translateY(-5px);
+        }
+        .tool-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #002060, #0039a6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+        .tool-icon i {
+            font-size: 18px;
+            color: #4fc3f7;
+        }
+        .tool-name {
+            font-weight: 600;
+            font-size: 16px;
+            color: #002060;
+        }
+        .conclusion {
+            text-align: center;
+            background: linear-gradient(135deg, #002060, #0039a6);
+            color: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0,32,96,0.2);
+        }
+        .conclusion-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: white;
+        }
+        .conclusion-text {
+            font-size: 16px;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #4fc3f7, #29b6f6);
+            color: #002060;
+            font-weight: 600;
+            font-size: 16px;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            box-shadow: 0 4px 15px rgba(79, 195, 247, 0.3);
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(79, 195, 247, 0.4);
+        }
+        .contact-info {
+            font-size: 14px;
+            margin-top: 15px;
+            color: #a9c6ff;
+        }
+        .chart-container {
+            width: 100%;
+            height: 180px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="portfolio">
+        <div class="bg-shape shape-1"></div>
+        <div class="bg-shape shape-2"></div>
+        <div class="bg-shape shape-3"></div>
+        
+        <div class="content">
+            <div class="nav-bar">
+                <a href="https://mk8r.github.io/portfolio/" class="home-btn">
+                    <i class="fas fa-home mr-2"></i> Home
+                </a>
+            </div>
+            
+            <div class="header">
+                <img src="https://github.com/mk8r/cv.pdf/blob/main/dp.jpg?raw=true" alt="MD Sajjad Islam" class="profile-img">
+                <div class="profile-info">
+                    <h1 class="name">MD Sajjad Islam</h1>
+                    <h2 class="title">Performance Marketer & Digital Marketing Manager</h2>
+                   <p class="contact"><a href="mailto:sharian.saju@gmail.com"><i class="fas fa-envelope mr-2"></i> sharian.saju@gmail.com</a> | <i class="fas fa-map-marker-alt mr-2"></i> Dhaka, Bangladesh</p>
+                    <p class="tagline">"Driving Results Through Data-Driven Digital Marketing Strategies"</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h3 class="section-title">
+                    <i class="fas fa-briefcase"></i>
+                    Case Study: Google Ads Success for Coverall PCS
+                </h3>
+                <p class="client-intro">
+                    Coverall PCS is a professional cleaning and janitorial service provider serving commercial and residential clients in the Dallas-Fort Worth area. Their services include office cleaning, disinfection, floor care, and customized cleaning plans tailored to businesses of all sizes.
+                </p>
+                <div class="objectives">
+                    <div class="objective">
+                        <i class="fas fa-eye"></i>
+                        <div class="objective-content">
+                            <div class="objective-title">Increase Brand Awareness</div>
+                            <div class="objective-desc">Boost local visibility in Dallas-Fort Worth</div>
+                        </div>
+                    </div>
+                    <div class="objective">
+                        <i class="fas fa-user-tie"></i>
+                        <div class="objective-content">
+                            <div class="objective-title">Generate Qualified Leads</div>
+                            <div class="objective-desc">Target businesses seeking cleaning services</div>
+                        </div>
+                    </div>
+                    <div class="objective">
+                        <i class="fas fa-phone-alt"></i>
+                        <div class="objective-content">
+                            <div class="objective-title">Maximize Conversions</div>
+                            <div class="objective-desc">Phone calls & form fills within $50/day budget</div>
+                        </div>
+                    </div>
+                    <div class="objective">
+                        <i class="fas fa-users"></i>
+                        <div class="objective-content">
+                            <div class="objective-title">Target Audience</div>
+                            <div class="objective-desc">Property managers, offices, medical facilities</div>
+                        </div>
+                    </div>
+                </div>
+                <img src="po_img/coverall/1.png" alt="Digital Marketing Analytics" class="dashboard-img">
+            </div>
+            
+            <div class="section">
+                <h3 class="section-title">
+                    <i class="fas fa-chess"></i>
+                    Strategy & Execution
+                </h3>
+                <div class="strategy-grid">
+                    <div class="strategy-item">
+                        <div class="strategy-title">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Targeting
+                        </div>
+                        <ul class="strategy-points">
+                            <li>Geo-targeted Dallas-Fort Worth area</li>
+                            <li>Focused on commercial clients</li>
+                            <li>Negative keywords for irrelevant searches</li>
+                        </ul>
+                    </div>
+                    <div class="strategy-item">
+                        <div class="strategy-title">
+                            <i class="fas fa-cogs"></i>
+                            Campaign Setup
+                        </div>
+                        <ul class="strategy-points">
+                            <li>Search Network Ads (high-intent users)</li>
+                            <li>$50/day budget (~$1,500/month)</li>
+                            <li>Ad groups segmented by services</li>
+                        </ul>
+                    </div>
+                    <div class="strategy-item">
+                        <div class="strategy-title">
+                            <i class="fas fa-bullhorn"></i>
+                            Ad Copy & Extensions
+                        </div>
+                        <ul class="strategy-points">
+                            <li>Compelling CTAs & messaging</li>
+                            <li>Call, location & site link extensions</li>
+                            <li>Service-specific ad groups</li>
+                        </ul>
+                    </div>
+                    <div class="strategy-item">
+                        <div class="strategy-title">
+                            <i class="fas fa-laptop-code"></i>
+                            Landing Page Optimization
+                        </div>
+                        <ul class="strategy-points">
+                            <li>Service-specific landing page</li>
+                            <li>Trust signals & credibility</li>
+                            <li>Contact forms & local relevance</li>
+                        </ul>
+                    </div>
+                </div>
+                <img src="po_img/coverall/2.png" alt="Google Ads Dashboard" class="dashboard-img">
+            </div>
+            
+            <div class="section">
+                <h3 class="section-title">
+                    <i class="fas fa-chart-line"></i>
+                    Results & Performance
+                </h3>
+                <div class="metrics-row">
+                    <div class="metric-card">
+                        <div class="metric-value">5.2%</div>
+                        <div class="metric-label">CTR</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">$3.20</div>
+                        <div class="metric-label">Avg. CPC</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">45+</div>
+                        <div class="metric-label">Monthly Leads</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">$33</div>
+                        <div class="metric-label">Cost Per Conversion</div>
+                    </div>
+                </div>
+                
+                <div class="chart-container">
+                    <canvas id="performanceChart"></canvas>
+                </div>
+                
+                <div class="screenshots">
+                    
+                    <img src="po_img/coverall/3.png" alt="Campaign Results Visualization" class="screenshot">
+                </div>
+                
+                <div class="achievements">
+                    <div class="achievements-title">Key Achievements</div>
+                    <div class="achievements-list">
+                        <div class="achievement-item">
+                            <i class="fas fa-arrow-trend-up"></i>
+                            <span>Improved lead generation efficiency</span>
+                        </div>
+                        <div class="achievement-item">
+                            <i class="fas fa-eye"></i>
+                            <span>Increased local market visibility</span>
+                        </div>
+                        <div class="achievement-item">
+                            <i class="fas fa-sliders"></i>
+                            <span>Reduced wasted ad spend</span>
+                        </div>
+                        <div class="achievement-item">
+                            <i class="fas fa-dollar-sign"></i>
+                            <span>Strengthened ROI with quality leads</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h3 class="section-title">
+                    <i class="fas fa-tools"></i>
+                    Tools & Expertise
+                </h3>
+                <div class="tools-grid">
+                    <div class="tool-item">
+                        <div class="tool-icon">
+                            <i class="fas fa-ad"></i>
+                        </div>
+                        <div class="tool-name">Google Ads Manager</div>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div class="tool-name">Google Analytics</div>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="tool-name">Keyword Research</div>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-icon">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                        <div class="tool-name">Landing Page Optimization</div>
+                    </div>
+                </div>
+                <img src="po_img/coverall/4.png" alt="Digital Marketing Analytics Dashboard" class="dashboard-img">
+            </div>
+            
+            <div class="section conclusion">
+                <h3 class="conclusion-title">Let's Grow Your Business Together</h3>
+                <p class="conclusion-text">
+                    Ready to achieve similar results for your business? Contact me today to discuss how we can create a customized digital marketing strategy that drives qualified leads and maximizes your ROI.
+                </p>
+                <a href="https://mk8r.github.io/portfolio/#contact" class="cta-button">Get In Touch</a>
+                <p class="contact-info">
+                    <i class="fas fa-envelope mr-2"></i> sharian.saju@gmail.com | <i class="fas fa-map-marker-alt mr-2"></i> Dhaka, Bangladesh
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Performance Chart
+        const ctx = document.getElementById('performanceChart').getContext('2d');
+        const performanceChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['CTR', 'CPC', 'Conversion Rate'],
+                datasets: [
+                    {
+                        label: 'Campaign Results',
+                        data: [5.2, 3.2, 7.8],
+                        backgroundColor: 'rgba(79, 195, 247, 0.7)',
+                        borderColor: 'rgba(79, 195, 247, 1)',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Industry Average',
+                        data: [3.5, 4.5, 5.2],
+                        backgroundColor: 'rgba(255, 82, 82, 0.7)',
+                        borderColor: 'rgba(255, 82, 82, 1)',
+                        borderWidth: 1
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Percentage / Dollars'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
